@@ -1,7 +1,7 @@
 /**
  * micro:bit용 ESP32 브리지 블록
  */
-//% color=#1E88E5 icon="\uf1eb" block="ESP32통신" weight=90 
+//% color=#1E88E5 icon="\uf1eb" block="ESP32 통신" weight=90 
 namespace ESP32UART {
     let lastLine = ""
     export let btConnected = false
