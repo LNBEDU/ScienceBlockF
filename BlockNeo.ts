@@ -309,8 +309,6 @@ namespace BlockNeo {
     /**
      * LED 한 개 색상
      */
-    //% block="LED $index 번 색상 $color"
-    //% weight=68
     export function setPixelColor(index: number, color: number): void {
         if (!strip) return
         index = clamp(index, 0, ledCount - 1)
@@ -362,8 +360,6 @@ namespace BlockNeo {
     /**
      * 반시계 방향 회전
      */
-    //% block="반시계 방향 회전"
-    //% weight=59
     export function rotateCounterClockwise(): void {
         if (!strip || ledCount <= 1) return
 
