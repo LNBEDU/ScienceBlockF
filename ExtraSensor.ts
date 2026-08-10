@@ -3,7 +3,7 @@
  * ADS1115 16-bit ADC for micro:bit
  */
 
-//% color="#2f74ff" icon="\uf0e7" block="JJOADS1115" weight=60
+//% color="#2f74ff" icon="\uf0e7" block="ExtraSensor" weight=60
 namespace ExtraSensor {
 
     let adsAddress = 0x48
