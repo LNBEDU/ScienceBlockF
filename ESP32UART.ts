@@ -1,7 +1,7 @@
 /**
- * micro:bit용 ESP32 UART 브리지 블록
+ * micro:bit용 ESP32 브리지 블록
  */
-//% color=#1E88E5 icon="\uf1eb" weight=90 block="ESP32통신"
+//% color=#1E88E5 icon="\uf1eb" block="ESP32통신" weight=90 
 namespace ESP32UART {
     let lastLine = ""
     export let btConnected = false
@@ -85,7 +85,7 @@ namespace ESP32UART {
     }
 
     /**
-     * ESP32용 UART 초기화
+     * ESP32용 초기화
      */
     //% block="ESP32 초기화 RX:P8 TX:P12 보드레이트:115200"
     //% weight=100
