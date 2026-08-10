@@ -1,0 +1,21 @@
+{
+    "name": "ScienceBlock",
+    "description": "SciencBlock (LCD, NeoPixel, ADS1115, ESP32)",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "neopixel": "github:microsoft/pxt-neopixel"
+    },
+    "files": [
+        "ExtraSensor.ts",
+        "ESP32UART.ts",
+        "BlockNeo.ts",
+        "LCD.ts",
+        "LCDGraph.ts",
+        "LCDFont.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
