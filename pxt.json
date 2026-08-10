@@ -7,11 +7,7 @@
         "neopixel": "github:microsoft/pxt-neopixel"
     },
     "files": [
-        "ExtraSensor.ts",
-        "ESP32UART.ts",
-        "LCD.ts",
-        "LCDGraph.ts",
-        "LCDFont.ts",
+        
         "BlockNeo.ts"  
     ],
     "testFiles": [
