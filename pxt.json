@@ -12,7 +12,7 @@
         "LCD.ts",
         "LCDGraph.ts",
         "LCDFont.ts",
-        "BlockNeo.ts"
+        "BlockNeo.ts"  
     ],
     "testFiles": [
         "test.ts"
