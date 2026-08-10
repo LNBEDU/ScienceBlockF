@@ -36,7 +36,7 @@ enum Color {
     White = 0xFFFF
 }
 
-//% color=#1E90FF icon="\uf108" block="LCD 화면" weight=80
+//% color=#1E90FF icon="\uf108" block="LCD" weight=80
 namespace LCD {
 
     // 가로형(90도) 기준 논리 좌표
