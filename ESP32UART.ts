@@ -110,8 +110,9 @@ namespace ESP32UART {
     /**
      * AT 명령 보내기
      */
-    //% block="AT 명령 보내기 $cmd"
+    /*//% block="AT 명령 보내기 $cmd"
     //% weight=98
+    */
     export function sendAT(cmd: string): void {
         lastLine = ""
         serial.writeString(cmd + "\r\n")
@@ -121,8 +122,10 @@ namespace ESP32UART {
     /**
      * OK 또는 ERROR 응답 대기
      */
+    /*
     //% block="AT 명령 $cmd 보내고 OK 기다리기"
     //% weight=97
+    */
     export function sendATWaitOK(cmd: string): boolean {
         lastLine = ""
         serial.writeString(cmd + "\r\n")
@@ -294,8 +297,10 @@ namespace ESP32UART {
     /**
      * 와이파이 연결 여부
      */
+    /*
     //% block="와이파이 연결됨?"
     //% weight=88
+    */
     export function isWifiConnected(): boolean {
         return wifiConnected
     }
@@ -303,8 +308,10 @@ namespace ESP32UART {
     /**
      * 와이파이 상태 확인 요청
      */
+    /*
     //% block="와이파이 상태 확인"
     //% weight=87
+    */
     export function checkWifiStatus(): boolean {
         lastLine = ""
         serial.writeString("AT+WIFISTATUS?\r\n")
@@ -467,8 +474,10 @@ namespace ESP32UART {
     /**
      * 블루투스 연결 여부
      */
+    /*
     //% block="블루투스 연결됨?"
     //% weight=78
+    */
     export function isBluetoothConnected(): boolean {
         return btConnected
     }
@@ -476,8 +485,10 @@ namespace ESP32UART {
     /**
      * 블루투스 상태 확인 요청
      */
+    /*
     //% block="블루투스 상태 확인"
     //% weight=77
+    */
     export function checkBluetoothStatus(): boolean {
         lastLine = ""
         serial.writeString("AT+BTSTATUS?\r\n")
@@ -523,8 +534,10 @@ namespace ESP32UART {
     /**
      * 마지막으로 받은 한 줄
      */
+    /*
     //% block="마지막으로 받은 줄"
     //% weight=61
+    */
     export function getLastLine(): string {
         return lastLine
     }
