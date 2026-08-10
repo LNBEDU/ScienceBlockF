@@ -104,6 +104,7 @@ namespace BlockNeo {
      * 네오픽셀 시작
      */
     //% block="네오픽셀 시작 LED 수 $num 밝기 $brightness"
+    //% num.defl=12 brightness.defl=6
     //% weight=100
     export function init(num: number, brightness: number): void {
         ledCount = clamp(num, 1, 64)
