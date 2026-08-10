@@ -123,9 +123,6 @@ namespace BlockNeo {
     /**
      * 전체 밝기
      */
-    //% block="전체 밝기 $brightness"
-    //% brightness.defl=20 brightness.min=0 brightness.max=255
-    //% weight=95
     export function setBrightness(brightness: number): void {
         if (!strip) return
         strip.setBrightness(clamp(brightness, 0, 255))
@@ -320,7 +317,7 @@ namespace BlockNeo {
     /**
      * LED 한 개만 색상 켜기
      */
-    //% block="LED $index 번만 색상 $color"
+    //% block="LED $index 번 색상 $color"
     //% weight=66
     export function showOneColor(index: number, color: number): void {
         if (!strip) return
@@ -389,20 +386,28 @@ namespace BlockNeo {
         showAllStored()
     }
 
-    /**
-     * 범위 무지개
+   /**
+     * 센서값에 따라 켜지는 LED 개수가 변하는 범위 무지개
      */
-    //% block="원형무지개 LED $start 번부터 $end 번까지 HUE $startHue 에서 $endHue 까지"
+    //% block="비례변환: %sensorVal를 LED %start 번부터 %end 번까지 HUE %startHue 에서 %endHue 범위로 변환"
+    //% sensorVal.min=0 sensorVal.max=1023
     //% start.min=0 start.max=63
     //% end.min=0 end.max=63
     //% startHue.min=0 startHue.max=360
     //% endHue.min=0 endHue.max=360
     //% weight=57
-    export function rainbowRangeHue(start: number, end: number, startHue: number, endHue: number): void {
+    export function rainbowRangeHue(
+        sensorVal: number,
+        start: number,
+        end: number,
+        startHue: number,
+        endHue: number
+    ): void {
         if (!strip) return
 
         start = clamp(start, 0, ledCount - 1)
         end = clamp(end, 0, ledCount - 1)
+
         startHue = clamp(startHue, 0, 360)
         endHue = clamp(endHue, 0, 360)
 
@@ -415,15 +420,42 @@ namespace BlockNeo {
         let count = end - start + 1
         if (count <= 0) return
 
-        if (count == 1) {
-            colors[start] = neopixel.hsl(startHue, 100, 50)
-            showAllStored()
-            return
+        // 센서값 범위 제한
+        sensorVal = clamp(sensorVal, 0, 1023)
+
+        // 센서값 0~1023을 LED 개수 0~count로 변환
+        let litCount = Math.floor(
+            sensorVal * count / 1023
+        )
+
+        // 센서 최대값에서는 모든 LED 켜기
+        if (sensorVal >= 1023) {
+            litCount = count
         }
 
         for (let i = 0; i < count; i++) {
-            let h = startHue + ((endHue - startHue) * i) / (count - 1)
-            colors[start + i] = neopixel.hsl(Math.floor(h), 100, 50)
+
+            if (i < litCount) {
+
+                // 각 LED의 무지개 색상 계산
+                let h
+
+                if (count == 1) {
+                    h = startHue
+                } else {
+                    h = startHue
+                        + ((endHue - startHue) * i)
+                        / (count - 1)
+                }
+
+                colors[start + i] =
+                    neopixel.hsl(Math.floor(h), 100, 50)
+
+            } else {
+
+                // 센서값 범위를 넘어선 LED는 끄기
+                colors[start + i] = 0
+            }
         }
 
         showAllStored()
