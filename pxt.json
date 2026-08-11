@@ -1,6 +1,6 @@
 {
     "name": "ScienceBlock",
-    "description": "SciencBlock (LCD,NeoPixel,GasSensor,ESP32)",
+    "description": "ScienceBlock (LCD, NeoPixel, GasSensor, ESP32)",
     "license": "MIT",
     "dependencies": {
         "core": "*",
@@ -12,7 +12,8 @@
         "LCD.ts",
         "LCDGraph.ts",
         "LCDFont.ts",
-        "BlockNeo.ts"  
+        "BlockNeo.ts",
+        "icon.png"
     ],
     "testFiles": [
         "test.ts"
