@@ -358,29 +358,7 @@ namespace BlockNeo {
      */
     //% block="LED를 %direction 방향으로 회전"
     //% weight=60
-    export function rotate(direction: RotateDirection): void {
-        if (!strip || ledCount <= 1) return
-
-        if (direction == RotateDirection.Clockwise) {
-            let last = colors[ledCount - 1]
-
-            for (let i = ledCount - 1; i > 0; i--) {
-                colors[i] = colors[i - 1]
-            }
-
-            colors[0] = last
-        } else {
-            let first = colors[0]
-
-            for (let i = 0; i < ledCount - 1; i++) {
-                colors[i] = colors[i + 1]
-            }
-
-            colors[ledCount - 1] = first
-        }
-
-        showAllStored()
-    }
+    
 
     /**
      * 원형 무지개
