@@ -47,18 +47,19 @@ enum NeoColor {
     Violet = 0x8A2BE2
 }
 
-/**
- * 회전 방향
- */
-export enum RotateDirection {
-    //% block="시계 방향"
-    Clockwise,
-    //% block="반시계 방향"
-    CounterClockwise
-}
-
 //% color="#ff7f24" icon="\uf110" block="BlockNeo" weight=20
 namespace BlockNeo {
+
+    /**
+     * 회전 방향
+     */
+    export enum RotateDirection {
+        //% block="시계 방향"
+        Clockwise,
+        //% block="반시계 방향"
+        CounterClockwise
+    }
+
 
     let strip: neopixel.Strip = null
     let colors: number[] = []
