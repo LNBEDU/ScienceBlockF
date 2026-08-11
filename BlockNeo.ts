@@ -47,18 +47,21 @@ enum NeoColor {
     Violet = 0x8A2BE2
 }
 
+    /**
+    * 회전 방향
+    */
+    export enum RotateDirection {
+        //% block="시계"
+        Clockwise,
+        //% block="반시계"
+        CounterClockwise
+    }
+
+
 //% color="#ff7f24" icon="\uf110" block="BlockNeo" weight=20
 namespace BlockNeo {
 
-    /**
-     * 회전 방향
-     */
-    export enum RotateDirection {
-        //% block="시계 방향"
-        Clockwise,
-        //% block="반시계 방향"
-        CounterClockwise
-    }
+    
 
 
     let strip: neopixel.Strip = null
@@ -351,15 +354,15 @@ namespace BlockNeo {
     }
 
     /**
-     * LED 회전
-     */
-    //% block="LED를 $direction 으로 회전"
+ * LED 회전
+    */
+    //% block="LED를 $direction 방향으로 회전"
+    //% direction.defl=RotateDirection.Clockwise
     //% weight=60
     export function rotate(direction: RotateDirection): void {
         if (!strip || ledCount <= 1) return
 
         if (direction == RotateDirection.Clockwise) {
-            // 시계 방향
             let last = colors[ledCount - 1]
 
             for (let i = ledCount - 1; i > 0; i--) {
@@ -369,7 +372,6 @@ namespace BlockNeo {
             colors[0] = last
 
         } else {
-            // 반시계 방향
             let first = colors[0]
 
             for (let i = 0; i < ledCount - 1; i++) {
