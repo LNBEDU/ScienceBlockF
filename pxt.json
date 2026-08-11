@@ -10,6 +10,7 @@
         "ExtraSensor.ts",
         "LCD.ts",
         "LCDGraph.ts",
+        "LCDFont.ts",
         "BlockNeo.ts"  
     ],
     "testFiles": [
