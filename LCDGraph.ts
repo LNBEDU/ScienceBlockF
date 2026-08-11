@@ -148,10 +148,10 @@ namespace LCDGraph {
     }
 
     //% block="그래프 보이는 시간 %sec 초"
-    //% sec.min=1 sec.max=60 sec.defl=6
+    //% sec.min=1 sec.max=600 sec.defl=6
     //% weight=94
     export function setWindowSeconds(sec: number) {
-        _windowSec = clamp(sec, 1, 60)
+        _windowSec = clamp(sec, 1, 600)
         _useWindowSec = true
         updateWindowMs()
         redrawAxes()
