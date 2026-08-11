@@ -56,10 +56,11 @@ namespace BlockNeo {
      * 회전 방향
      */
     export enum RotateDirection {
-        //% block="시계"
-        Clockwise,
-        //% block="반시계"
-        CounterClockwise
+        //% block="시계 방향"
+        Clockwise = 0,
+
+        //% block="반시계 방향"
+        CounterClockwise = 1
     }
 
 
@@ -352,15 +353,15 @@ namespace BlockNeo {
         strip.show()
     }
 
-    /**
+   /**
      * LED 회전
      */
-    //% block="LED를 %Rotdirection 방향으로 회전"
+    //% block="LED를 %direction 방향으로 회전"
     //% weight=60
-    export function rotate(Rotdirection: RotateDirection): void {
+    export function rotate(direction: RotateDirection): void {
         if (!strip || ledCount <= 1) return
 
-        if (Rotdirection == RotateDirection.Clockwise) {
+        if (direction == RotateDirection.Clockwise) {
             let last = colors[ledCount - 1]
 
             for (let i = ledCount - 1; i > 0; i--) {
@@ -368,7 +369,6 @@ namespace BlockNeo {
             }
 
             colors[0] = last
-
         } else {
             let first = colors[0]
 
