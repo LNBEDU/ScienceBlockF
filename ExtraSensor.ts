@@ -98,7 +98,7 @@ namespace ExtraSensor {
     /**
      * 외부센서 전압측정
      */
-    //% block="외부센서 $channel 전압측정"
+    //% block="외부센서 $channel 전압측정 (5V = 1024)"
     //% weight=90
     export function voltage(
         channel: SensorChannel
