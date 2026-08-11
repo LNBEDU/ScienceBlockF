@@ -47,9 +47,6 @@ enum NeoColor {
     Violet = 0x8A2BE2
 }
 
-//% color="#ff7f24" icon="\uf110" block="BlockNeo" weight=20
-namespace BlockNeo {
-
     /**
      * 회전 방향
      */
@@ -59,6 +56,11 @@ namespace BlockNeo {
         //% block="반시계"
         CounterClockwise
     }
+
+//% color="#ff7f24" icon="\uf110" block="BlockNeo" weight=20
+namespace BlockNeo {
+
+    
 
 
     let strip: neopixel.Strip = null
