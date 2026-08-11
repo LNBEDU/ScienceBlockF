@@ -354,15 +354,15 @@ namespace BlockNeo {
     }
 
     /**
- * LED 회전
-    */
+     * LED 회전
+     */
     //% block="LED를 $direction 방향으로 회전"
-    //% direction.defl=RotateDirection.Clockwise
     //% weight=60
     export function rotate(direction: RotateDirection): void {
         if (!strip || ledCount <= 1) return
 
         if (direction == RotateDirection.Clockwise) {
+            // 시계 방향
             let last = colors[ledCount - 1]
 
             for (let i = ledCount - 1; i > 0; i--) {
@@ -372,6 +372,7 @@ namespace BlockNeo {
             colors[0] = last
 
         } else {
+            // 반시계 방향
             let first = colors[0]
 
             for (let i = 0; i < ledCount - 1; i++) {
