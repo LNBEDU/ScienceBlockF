@@ -1,6 +1,6 @@
 {
     "name": "ScienceBlock",
-    "description": "SciencBlock(LCD,NeoPixel,GasSensor,ESP32)",
+    "description": "SciencBlock (LCD,NeoPixel,GasSensor,ESP32)",
     "license": "MIT",
     "dependencies": {
         "core": "*",
