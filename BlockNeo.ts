@@ -357,7 +357,7 @@ namespace BlockNeo {
     /**
      * LED 회전
      */
-    //% block="LED를 %direction 방향으로 회전"
+    //% block="LED를 $direction 방향으로 회전"
     //% weight=60
     export function rotate(direction: RotateDirection): void {
         if (!strip || ledCount <= 1) return
