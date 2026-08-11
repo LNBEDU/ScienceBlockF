@@ -50,7 +50,7 @@ enum NeoColor {
     /**
      * 회전 방향
      */
-    export enum RotateDirection {
+    enum RotateDirection {
         //% block="시계"
         Clockwise,
         //% block="반시계"
