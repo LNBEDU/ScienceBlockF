@@ -165,7 +165,7 @@ namespace LCDGraph {
         redrawAxes()
     }
 
-    //% block="그래프 범위 최소 %vmin 최대 %vmax"
+    //% block="그래프 Y축 범위 최소 %vmin 최대 %vmax"
     //% weight=92
     export function setYFixed(vmin: number, vmax: number) {
         if (vmax <= vmin) vmax = vmin + 1
@@ -175,7 +175,7 @@ namespace LCDGraph {
         redrawAxes()
     }
 
-    //% block="Y축 자동"
+    //% block="Y축 범위 자동변화"
     //% weight=90
     export function setYAuto() {
         _yFixed = false

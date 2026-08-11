@@ -107,7 +107,7 @@ namespace ExtraSensor {
         let raw = readADC(channel)
 
         let adcVoltage =
-            raw * 4.096 / 32768
+            raw * 0.0386
 
         return adcVoltage
     }
