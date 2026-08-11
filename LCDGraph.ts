@@ -109,9 +109,6 @@ namespace LCDGraph {
         return "" + Math.round(v) + "s"
     }
 
-    //% block="상태 표시 메시지 %msg 색 %color"
-    //% msg.defl="Ready"
-    //% weight=100
     export function drawStatus(msg: string, color: number) {
         if (!msg) msg = ""
 
@@ -125,23 +122,19 @@ namespace LCDGraph {
         LCDFont.drawText5x7(margin, 6, msg, 2, color, LCD.black())
     }
 
-    //% block="그래프 설정 선굵기 %thickness 부드러움 %smooth 속도 %speed"
+    //% block="그래프 설정 선굵기 %thickness 부드러움 %smooth"
     //% thickness.min=1 thickness.max=3 thickness.defl=2
     //% smooth.min=0 smooth.max=3 smooth.defl=2
-    //% speed.min=0 speed.max=2 speed.defl=1
     //% weight=95
-    export function config(thickness: number, smooth: number, speed: number) {
+    export function config(thickness: number, smooth: number) {
         _thickness = thickness
         _smoothLevel = smooth
 
         if (_thickness < 1) _thickness = 1
         if (_thickness > 3) _thickness = 3
+
         if (_smoothLevel < 0) _smoothLevel = 0
         if (_smoothLevel > 3) _smoothLevel = 3
-
-        if (speed == 0) _pauseMs = 20
-        else if (speed == 1) _pauseMs = 30
-        else _pauseMs = 60
 
         updateWindowMs()
         redrawAxes()
@@ -182,16 +175,13 @@ namespace LCDGraph {
         redrawAxes()
     }
 
-    //% block="자동 범위 여유 %padding"
-    //% padding.min=1 padding.max=100 padding.defl=5
-    //% weight=89
     export function setAutoRangePadding(padding: number) {
         _autoRangePadding = clamp(padding, 1, 100)
     }
 
     //% block="그래프 시작 1개 이름 %name"
     //% name.defl="S1"
-    //% weight=85
+    //% weight=100
     export function start1(name: string) {
         _mode = 1
         _label1 = name
@@ -202,7 +192,7 @@ namespace LCDGraph {
 
     //% block="그래프 시작 2개 이름1 %name1 이름2 %name2"
     //% name1.defl="S1" name2.defl="S2"
-    //% weight=84
+    //% weight=98
     export function start2(name1: string, name2: string) {
         _mode = 2
         _label1 = name1
@@ -213,14 +203,14 @@ namespace LCDGraph {
     }
 
     //% block="그래프 업데이트 값 %v"
-    //% weight=80
+    //% weight=99
     export function update(v: number) {
         if (!_started) return
         updateCore(v, 0)
     }
 
     //% block="그래프 업데이트 값1 %v1 값2 %v2"
-    //% weight=79
+    //% weight=97
     export function update2(v1: number, v2: number) {
         if (!_started) return
         updateCore(v1, v2)
