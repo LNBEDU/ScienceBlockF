@@ -9,6 +9,7 @@
     "files": [
         "ExtraSensor.ts",
         "LCD.ts",
+        "LCDGraph.ts",
         "BlockNeo.ts"  
     ],
     "testFiles": [
