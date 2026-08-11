@@ -403,7 +403,7 @@ namespace BlockNeo {
     /**
      * 센서값에 따라 켜지는 LED 개수가 변하는 범위 무지개
      */
-    //% block="비례변환 %sensorVal LED %start ~ %end HUE %startHue ~ %endHue"
+    //% block="비례변환 %sensorVal LED %start 부터 %end 까지 HUE %startHue 부터 %endHue 까지"
     //% sensorVal.min=0 sensorVal.max=1023
     //% start.min=0 start.max=63
     //% end.min=0 end.max=63
