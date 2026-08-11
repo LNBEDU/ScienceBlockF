@@ -352,7 +352,7 @@ namespace BlockNeo {
     /**
      * LED 회전
      */
-    //% block="LED를 %direction 으로 회전"
+    //% block="LED를 $direction 으로 회전"
     //% weight=60
     export function rotate(direction: RotateDirection): void {
         if (!strip || ledCount <= 1) return
@@ -398,7 +398,7 @@ namespace BlockNeo {
         showAllStored()
     }
 
-   /**
+    /**
      * 센서값에 따라 켜지는 LED 개수가 변하는 범위 무지개
      */
     //% block="비례변환 %sensorVal LED %start ~ %end HUE %startHue ~ %endHue"
