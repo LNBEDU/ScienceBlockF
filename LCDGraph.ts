@@ -110,7 +110,7 @@ namespace LCDGraph {
     }
 
     //% block="상태 표시 메시지 %msg 색 %color"
-    //% msg.defl="준비 완료"
+    //% msg.defl="Ready"
     //% weight=100
     export function drawStatus(msg: string, color: number) {
         if (!msg) msg = ""
@@ -157,7 +157,7 @@ namespace LCDGraph {
         redrawAxes()
     }
 
-    //% block="그래프 시간 자동"
+    //% block="그래프 연속 시간 측정"
     //% weight=93
     export function setWindowAuto() {
         _useWindowSec = false
@@ -175,12 +175,6 @@ namespace LCDGraph {
         redrawAxes()
     }
 
-    //% block="그래프 Min %vmin Max %vmax"
-    //% weight=91
-    export function setMinMax(vmin: number, vmax: number) {
-        setYFixed(vmin, vmax)
-    }
-
     //% block="Y축 자동"
     //% weight=90
     export function setYAuto() {
@@ -196,7 +190,7 @@ namespace LCDGraph {
     }
 
     //% block="그래프 시작 1개 이름 %name"
-    //% name.defl="센서"
+    //% name.defl="S1"
     //% weight=85
     export function start1(name: string) {
         _mode = 1
@@ -207,7 +201,7 @@ namespace LCDGraph {
     }
 
     //% block="그래프 시작 2개 이름1 %name1 이름2 %name2"
-    //% name1.defl="센서A" name2.defl="센서B"
+    //% name1.defl="S1" name2.defl="S2"
     //% weight=84
     export function start2(name1: string, name2: string) {
         _mode = 2
