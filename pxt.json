@@ -7,7 +7,7 @@
         "neopixel": "github:microsoft/pxt-neopixel"
     },
     "files": [
-        
+        "ExtraSensor.ts",
         "BlockNeo.ts"  
     ],
     "testFiles": [
